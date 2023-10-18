@@ -4,9 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/2D High Quality pack  2 stickmans  23 weapons  working systems 
-      + more/Scenes/Demo.unity
-    guid: 2805634c54820a348b9cf8663fe067f2
+  m_Scenes: []
   m_configObjects: {}
