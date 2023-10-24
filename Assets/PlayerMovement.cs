@@ -184,13 +184,14 @@ public class PlayerMovement : MonoBehaviour
         {
             gravity = gravity2;
         }
-        else
+        else if (isGround)
         {
             gravity = gravity1;
         }
 
 
     }
+
     void AnimatorLogic()
     {
         if (dashed)
@@ -255,11 +256,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (wall && !doublejump)
         {
-
+            print("inwall jump");
             rg.AddForceAtPosition(new Vector3(-mv * 1.25f, jumpForce * 1.25f),transform.position,ForceMode.Impulse);
         }
         else if (wall && doublejump)
         {
+            print("inwall jump");
+
             rg.AddForceAtPosition(new Vector3(-mv * 1.25f, jumpForce * 1.25f), transform.position, ForceMode.Impulse);
         }
 
@@ -269,15 +272,18 @@ public class PlayerMovement : MonoBehaviour
     void PlayerMove(float mv)
     {
         movement.Set(mv, 0f, 0f);
+
         if (mv <0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
+
             left = true;
             right = false;
         }
         else if(mv>0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
+
             left = false;
             right = true;
         }
