@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -243,7 +243,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785724044}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 51cf7c76837341543a36050e4db7b840, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -440,7 +440,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430886109}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 51cf7c76837341543a36050e4db7b840, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -545,7 +545,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598312063}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 51cf7c76837341543a36050e4db7b840, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -808,6 +808,7 @@ MonoBehaviour:
   doubleJump: 0
   coyoteAct: 0
   jumping: 0
+  canMove: 0
   inWall: 0
   DashUsable: 0
   dashed: 0
@@ -837,7 +838,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910043008}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 51cf7c76837341543a36050e4db7b840, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

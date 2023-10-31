@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Header("Walls")]
+    [SerializeField] private bool canMove;
     [SerializeField] private bool inWall;
     [Header("Dashed")]
     [SerializeField] private bool DashUsable;
@@ -48,6 +49,34 @@ public class PlayerMovement : MonoBehaviour
     {
         DetectDash();
         DetectJump();
+    }
+    private void FixedUpdate()
+    {
+        mv = Input.GetAxis("Horizontal");
+        //print("Contacto: " + GroundCheck());
+        if (!coyoteAct)
+        {
+            coyoteTim -= Time.deltaTime;
+        }
+
+        if (rg.velocity.y > 0)
+        {
+
+        }
+
+        GroundCheck();
+        
+        AnimatorLogic();
+
+        WallSlide();
+
+        if (canMove)
+        {
+            PlayerMove(mv);
+
+        }
+      
+       
     }
 
     bool left;
@@ -150,39 +179,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     float mv;
-    private void FixedUpdate()
-    {
-        mv = Input.GetAxis("Horizontal");
-        //print("Contacto: " + GroundCheck());
-        if (!coyoteAct)
-        {
-            coyoteTim -= Time.deltaTime;
-        }
-
-        if (rg.velocity.y > 0)
-        {
-
-        }
-
-        GroundCheck();
-        
-        AnimatorLogic();
-
-        WallSlide();
-
-        PlayerMove(mv);
-      
-       
-    }
 
     void WallSlide()
     {
         float gravity1 = 1f;
-        float gravity2= .15f;
+        float gravity2= .05f;
 
         if (inWall && !isGround && mv !=0)
         {
             gravity = gravity2;
+            canMove = false;
         }
         else if (isGround)
         {
@@ -293,13 +299,14 @@ public class PlayerMovement : MonoBehaviour
         movement = movement.normalized * Speed * Time.deltaTime;
 
         rg.MovePosition(transform.position + movement);
-        rg.AddForce(gravity * Vector3.down,ForceMode.Impulse);
         
     }
 
     //Deteccion de Colisiones
     void GroundCheck()
     {
+        rg.AddForce(gravity * Vector3.down, ForceMode.Impulse);
+
         float rayLegthD = 0.8f;
         float rayLegthM = 0.3f;
         float rayLegth = .7f;
@@ -370,6 +377,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (WallLEFT && !FLOOR)
             {
+                
                 inWall = true;
                 isfall = false;
                 isGround = false;
