@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rg;
     private Vector3 movement;
     private Animator animator;
-
+    public bool onMovil;
 
     //jump and falling
     [Header("Jump and falling")]
@@ -65,8 +65,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         DetectJump();
+
         
     }
+
+
     private void FixedUpdate()
     {
         mv = Input.GetAxis("Horizontal");
@@ -391,10 +394,20 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetBool("Walk", mv !=0 && isGround);
         
-        movement = movement.normalized * Speed * Time.deltaTime;
 
-        rg.MovePosition(transform.position + movement);
+        if (!onMovil)
+        {
+        movement = movement.normalized * Speed * Time.deltaTime;
+            rg.MovePosition(transform.position + movement);
+        }else if (onMovil)
+        {
+            movement = movement * Speed * Time.deltaTime;
+            rg.AddForce(movement);
+            
+            Debug.Log(movement*10);
+        }
         
+
     }
 
     //Deteccion de Colisiones
