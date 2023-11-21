@@ -8,6 +8,9 @@ public class TriggerSystem : MonoBehaviour
     public enum TypeOfObject { NONE, ENEMY, CHECKPOINT, ENEMYM }
     public TypeOfObject Type = TypeOfObject.NONE;
     public PlayerManager Player;
+
+    public bool Dodamage;
+    public bool Dontdamage;
     private void Start()
     {
         
@@ -24,9 +27,25 @@ public class TriggerSystem : MonoBehaviour
                     Debug.Log("No Type Assigned");
                 break;
             case TypeOfObject.ENEMY:
-                    Debug.Log("Intentando Daño");
-                Player.GettDamage();
-                break;
+                    if (!Dodamage && other.GetComponent<PlayerMovement>().Dashing)
+                    {
+                        Debug.Log("Intentando Daño");
+                        Player.GettDamage();
+                    }else if(Dodamage && !other.GetComponent<PlayerMovement>().Dashing)
+                    {
+                        Debug.Log("Intentando Daño");
+                        Player.GettDamage();
+                    }
+                    else if (Dontdamage)
+                    {
+                        Debug.Log("No hice daño");
+                    }
+                    else
+                    {
+                        Debug.Log("No hice daño");
+                    }
+
+                    break;
             case TypeOfObject.ENEMYM:
                     if (!other.GetComponent<PlayerMovement>().Jumping)
                     {

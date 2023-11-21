@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     
     public bool Jumping { get { return isfall; } }
+    public bool Dashing { get { return dashed; } }
     //jump and falling
 
     [Header("Jump and falling")]

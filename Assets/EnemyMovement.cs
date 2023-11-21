@@ -53,7 +53,7 @@ public class EnemyMovement : MonoBehaviour
             animator.SetBool("Walking", false);
             animator.SetTrigger("Die");
             AudioManager.Instance.PlaySounds("Button");
-            Destroy(gameObject, 0.35f);
+            Destroy(gameObject, 0.15f);
 
         }
 
