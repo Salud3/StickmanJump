@@ -13,12 +13,13 @@ public class PlayerManager : MonoBehaviour
     {
         vidas = GameManager.Instance.Vidas;
     }
-
+    bool LOSED;
     private void FixedUpdate()
     {
-        if(vidas <= 0)
+        if(vidas <= 0 && !LOSED)
         {
             GameManager.Instance.Lose();    
+            LOSED = true;
         }
     }
     void Update()

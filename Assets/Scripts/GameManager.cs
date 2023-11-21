@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int star;
 
     public GameObject Pantallalose;
-    //public GameObject PantallaNextLevel;
+    public GameObject PantallaNextLevel;
     public GameObject PantallaWin;
 
 

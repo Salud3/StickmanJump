@@ -5133,10 +5133,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trophies: 0
   gems: 0
-  Coins: 0
+  coins: 0
   key: 0
-  Star: 0
+  star: 0
   Pantallalose: {fileID: 2813616276839921886, guid: 8b6d372e8275c724cae7672192a52e27, type: 3}
+  PantallaNextLevel: {fileID: 2172448679871914037, guid: 745a0f99ec4c6324585c2c605f5fc676, type: 3}
   PantallaWin: {fileID: 2172448679871914037, guid: 6f027cf4768dc914cab5ee6542260ce8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
