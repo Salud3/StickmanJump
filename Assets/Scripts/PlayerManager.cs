@@ -23,6 +23,10 @@ public class PlayerManager : MonoBehaviour
     }
     void Update()
     {
+        if (vidas > 3)
+        {
+            vidas = 3;
+        }
         switch (vidas)
         {
             case 1:
@@ -31,14 +35,16 @@ public class PlayerManager : MonoBehaviour
                 VidaImg[2].gameObject.SetActive(false);
                 break;
             case 2:
-                VidaImg[0].gameObject.SetActive(false);
+                VidaImg[0].gameObject.SetActive(true);
                 VidaImg[1].gameObject.SetActive(true);
-                VidaImg[2].gameObject.SetActive(true);
+                VidaImg[2].gameObject.SetActive(false);
                 break;
             case 3:
                 VidaImg[0].gameObject.SetActive(true);
                 VidaImg[1].gameObject.SetActive(true);
                 VidaImg[2].gameObject.SetActive(true);
+                break;
+            default:
                 break;
         }
     }
