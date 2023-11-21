@@ -6,24 +6,38 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public Slider _musicSlider, _sfxslider;
+    public Animator FondoNegro;
 
     private void Awake()
     {
+        FondoNegro = GameObject.Find("/Canvas/FondoNegro").GetComponent<Animator>();
+        _musicSlider = GameObject.Find("/Canvas/MenuOptions/MusicLevel").GetComponent<Slider>();
+        _sfxslider = GameObject.Find("/Canvas/MenuOptions/SFXLevel").GetComponent<Slider>();
         _sfxslider.value = .5f;
         _musicSlider.value = .5f;
-        _musicSlider = GameObject.Find("/SceneLoadManager/Canvas/MenuOptions/OptionsMenu/VolumenMusica").GetComponent<Slider>();
-        _sfxslider = GameObject.Find("/SceneLoadManager/Canvas/MenuOptions/OptionsMenu/VolumenGeneral").GetComponent<Slider>();
-
+        
 
     }
     private void Start()
     {
-        _sfxslider.value = AudioManager.Instance.SavedSFXVolume;
-        _musicSlider.value = AudioManager.Instance.SavedMusicVolume;
-        gameObject.SetActive(false);
+        
+        GameObject a = _musicSlider.gameObject.transform.parent.gameObject;
+        a.SetActive(false);
 
     }
-
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+    }
+    public void Reanude()
+    {
+        Time.timeScale = 1.0f;
+    }
+    public void Play()
+    {
+        FondoNegro.SetTrigger("Fadein");
+        GameManager.Instance.Loadscene();
+    }
     public void MusicVolume()
     {
         AudioManager.Instance.MusicVolume(_musicSlider.value);

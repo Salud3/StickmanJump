@@ -26,7 +26,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-
         }
     }
 
@@ -52,6 +51,14 @@ public class AudioManager : MonoBehaviour
                 init = true;
                 break;
             case 3:
+                PlayMusic("Level");
+                init = true;
+                break;
+            case 4:
+                PlayMusic("Level");
+                init = true;
+                break;
+            case 5:
                 PlayMusic("Credits");
                 init = true;
                 break;

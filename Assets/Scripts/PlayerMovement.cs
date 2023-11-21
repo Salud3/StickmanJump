@@ -16,7 +16,12 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public bool onMovil;
 
+    //public bool CanMove;
+
+    
+    public bool Jumping { get { return isfall; } }
     //jump and falling
+
     [Header("Jump and falling")]
     [SerializeField] private float jumpForce = 15;
     [SerializeField] private float coyoteTime = 0.2f;
@@ -55,20 +60,26 @@ public class PlayerMovement : MonoBehaviour
     {
         StartCoroutine(DashedUsable());
         StartCoroutine(JumpOnWall());
+        CanMove = true;
 
     }
     void Update()
     {
+        if (CanMove)
+        {
+
         if (!inWall)
         {
             DetectDash();
         }
 
-        DetectJump();
+            DetectJump();
+        }
 
         
     }
-
+    public bool CanMove;
+    
 
     private void FixedUpdate()
     {
@@ -83,16 +94,18 @@ public class PlayerMovement : MonoBehaviour
         DetectCollisions();
         
         AnimatorLogic();
-
         GravityCheck();
-
-        if (OnWallJump)
+        if (CanMove)
         {
-            jumpwall();
-        }
 
-        PlayerMove(mv);
-        
+
+            if (OnWallJump)
+            {
+                jumpwall();
+            }
+
+            PlayerMove(mv);
+        }
         
 
       
@@ -406,10 +419,14 @@ public class PlayerMovement : MonoBehaviour
             
             Debug.Log(movement*10);
         }
-        
+
+        if (rg.velocity.magnitude > maxSpeed)
+        {
+            rg.velocity = rg.velocity.normalized * maxSpeed;
+        }
 
     }
-
+    public float maxSpeed; 
     //Deteccion de Colisiones
     void DetectCollisions()
     {
