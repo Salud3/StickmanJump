@@ -72,7 +72,7 @@ public class WinCondition : MonoBehaviour
     }
     private void Ins()
     {
-        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings)
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings-1)
         {
             Instantiate(GameManager.Instance.PantallaWin);
 

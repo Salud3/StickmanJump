@@ -74,10 +74,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void sumObject(TypeOfObject @object){
-    
+
         switch (@object)
         {
-            case TypeOfObject.Coin: coins++; score += 150; break;
+            case TypeOfObject.Coin: coins++; score += 25; break;
             case TypeOfObject.Trophy: trophies++; score += 200; break;
             case TypeOfObject.Gem: gems++; score += 250; break;
             case TypeOfObject.Key: key++; score += 300; break;

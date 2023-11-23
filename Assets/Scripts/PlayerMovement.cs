@@ -163,9 +163,9 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator DashedUsable()
     {
         DashUsable = false;
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.45f);
         dashed = false;
-        yield return new WaitForSeconds(2.25f);
+        yield return new WaitForSeconds(2.05f);
         DashUsable = true;
     }
     void DetectJump()
@@ -421,10 +421,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log(movement*10);
         }
 
-        if (rg.velocity.magnitude > maxSpeed)
+        if (rg.velocity.x > maxSpeed)
         {
-            rg.velocity = rg.velocity.normalized * maxSpeed;
-        }
+            //rg.velocity = rg.velocity.normalized * maxSpeed;
+            rg.velocity = new Vector3(1 ,rg.velocity.y).normalized * Time.deltaTime * maxSpeed;
+               }
 
     }
     public float maxSpeed; 

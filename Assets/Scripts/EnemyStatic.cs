@@ -22,8 +22,9 @@ public class EnemyStatic : MonoBehaviour
     {
         if (other.tag == "Player" && other.GetComponent<PlayerMovement>().Dashing)
         {
-            animator.SetTrigger("Die");
             this.gameObject.GetComponent<TriggerSystem>().Dontdamage = true;
+            GetComponent<CapsuleCollider>().enabled = false;
+            animator.SetTrigger("Die");
             Destroy(gameObject, 0.50f);
 
         }

@@ -48498,6 +48498,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &875758588193509189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8162760026889649113}
+  - component: {fileID: 5145026828318388835}
+  - component: {fileID: 4585224214043715830}
+  m_Layer: 0
+  m_Name: Panel Control (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!114 &943677713191967372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49625,6 +49643,22 @@ RectTransform:
   m_AnchoredPosition: {x: 300, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4585224214043715830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875758588193509189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c633c675f3158e488f3d19d184a535f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 1074589960}
+  dialogueText: {fileID: 1888443078}
+  Text: 'Tiwuan: *Esa plataforma tiene musgo pegajoso, no podre moverme caminando*
+    (puedes dashear y saltar sobre la plataforma pero no caminar!)'
 --- !u!222 &4649422378680834765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49753,6 +49787,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8847430348699435012}
   m_CullTransparentMesh: 1
+--- !u!136 &5145026828318388835
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875758588193509189}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!222 &5175605478865184077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50250,7 +50307,7 @@ MonoBehaviour:
   OnWallJump: 0
   CanMove: 0
   jumpwallusable: 0
-  maxSpeed: 18
+  maxSpeed: 15
 --- !u!114 &6806925365387485569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50668,6 +50725,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2513461243350706832}
   m_CullTransparentMesh: 1
+--- !u!4 &8162760026889649113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875758588193509189}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.68, y: 52.36, z: -1.1191683}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8166103562946302434
 GameObject:
   m_ObjectHideFlags: 0
@@ -51048,3 +51120,4 @@ SceneRoots:
   - {fileID: 1773033661}
   - {fileID: 910418702}
   - {fileID: 1330395381}
+  - {fileID: 8162760026889649113}
