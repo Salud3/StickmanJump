@@ -16,9 +16,16 @@ public class UIControllerMenus : MonoBehaviour
     {
         
     }
-
+    public void Resset()
+    {
+        GameManager.Instance.Resett();
+    }
+    public void LoadSceneNL()
+    {
+        GameManager.Instance.Loadscene();
+    }
     public void SceneHome()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(GameManager.Instance.SceneLoad(0));
     }
 }

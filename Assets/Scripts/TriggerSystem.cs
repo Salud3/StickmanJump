@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TriggerSystem : MonoBehaviour
 {
-    public enum TypeOfObject { NONE, ENEMY, CHECKPOINT, ENEMYM }
+    public enum TypeOfObject { NONE, ENEMY, CHECKPOINT, ENEMYM, CANNON }
     public TypeOfObject Type = TypeOfObject.NONE;
     public PlayerManager Player;
 
@@ -26,8 +26,18 @@ public class TriggerSystem : MonoBehaviour
             case TypeOfObject.NONE:
                     Debug.Log("No Type Assigned");
                 break;
+                case TypeOfObject.CANNON:
+
+                    if (other.GetComponent<PlayerMovement>().Jumping)
+                    {
+                        Debug.Log("Intentando Daño");
+                        GetComponent<CannonLaunch>().Dies();
+                        AudioManager.Instance.PlaySounds("Button");
+                    } 
+
+                    break;
             case TypeOfObject.ENEMY:
-                    if (!Dodamage && other.GetComponent<PlayerMovement>().Dashing)
+                    if (!Dodamage && !Dontdamage)
                     {
                         Debug.Log("Intentando Daño");
                         Player.GettDamage();

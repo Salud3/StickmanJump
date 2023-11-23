@@ -12,6 +12,8 @@ public class CollectionUI : MonoBehaviour
     public TextMeshProUGUI Key;
     public TextMeshProUGUI Score;
 
+    public bool isKey;
+
     private void Start()
     {
         
@@ -23,25 +25,26 @@ public class CollectionUI : MonoBehaviour
         Trophies.text = ": " + GameManager.Instance.Trophies.ToString();
         Gems.text = ": " + GameManager.Instance.Gems.ToString();
         Score.text = "Score : " + GameManager.Instance.Score.ToString();
-        
-        if (GameManager.Instance.BKey() && SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            Key.text = "o";
-            Key.color = Color.green;
-        }
-        else if (!GameManager.Instance.BKey() && SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            Key.text = "-";
-            Key.color = Color.red;
-        }
-        else
-        {
-            Key.text = "o";
-            Key.color = Color.green;
-            Key.gameObject.transform.parent.gameObject.SetActive(false);
-        }
 
-
+        if (isKey)
+        {
+            if (GameManager.Instance.BKey() && SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                Key.text = "o";
+                Key.color = Color.green;
+            }
+            else if (!GameManager.Instance.BKey() && SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                Key.text = "-";
+                Key.color = Color.red;
+            }
+            else
+            {
+                Key.text = "o";
+                Key.color = Color.green;
+                Key.gameObject.transform.parent.gameObject.SetActive(false);
+            }
+        }
         
     }
 

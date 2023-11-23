@@ -100,6 +100,7 @@ public class Dialogue : MonoBehaviour
             if (!completeText)
             {
                 ActionMark.SetActive(true);
+                other.GetComponent<Animator>().SetBool("Walk",false);
                 other.GetComponent<PlayerMovement>().CanMove = false;
             }
 

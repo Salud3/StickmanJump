@@ -44,7 +44,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    public void Resett()
+    {
+        vidas = 3; trophies = 0; gems = 0; key = 0; coins =0; star = 0; score = 0;
+    }
     public bool BKey()
     {
         return key > 0;
@@ -79,6 +82,7 @@ public class GameManager : MonoBehaviour
             case TypeOfObject.Gem: gems++; score += 250; break;
             case TypeOfObject.Key: key++; score += 300; break;
             case TypeOfObject.Star: star++; score += 500; break;
+            case TypeOfObject.Vida: Heal(); break;
        }
 
     }
@@ -97,7 +101,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator SceneLoad(int sceneIndex)
     {
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(sceneIndex);
         AudioManager.Instance.musicSource.Stop();
         yield return new WaitForSeconds(0.1f);

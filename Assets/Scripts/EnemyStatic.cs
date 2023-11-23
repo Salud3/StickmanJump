@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyStatic : MonoBehaviour
 {
     public Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class EnemyStatic : MonoBehaviour
         {
             animator.SetTrigger("Die");
             this.gameObject.GetComponent<TriggerSystem>().Dontdamage = true;
-            Destroy(gameObject, 1.35f);
+            Destroy(gameObject, 0.50f);
 
         }
     }

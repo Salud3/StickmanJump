@@ -6579,7 +6579,7 @@ Transform:
   m_GameObject: {fileID: 266003457}
   serializedVersion: 2
   m_LocalRotation: {x: 0.19198817, y: 0.0000000118356125, z: -0.0000000023153701, w: 0.9813973}
-  m_LocalPosition: {x: -2.5500002, y: 2.7146664, z: 10.589752}
+  m_LocalPosition: {x: -2.5500002, y: -3.615333, z: 10.589751}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21338,7 +21338,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.19198817, y: 0.0000000118356125, z: -0.0000000023153701, w: 0.9813973}
-  m_LocalPosition: {x: -2.5500002, y: 2.7146664, z: 10.589752}
+  m_LocalPosition: {x: -2.5500002, y: -3.615333, z: 10.589751}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34760,8 +34760,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fondoN: {fileID: 2821482328497549133}
   Obstacle: {fileID: 966150826}
+  dialogue: {fileID: 0}
   GemAtStartScene: 0
   GemsObjetive: 0
+  canPass: 0
+  canPss: 0
 --- !u!1001 &1542342767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49215,7 +49218,7 @@ Transform:
   m_GameObject: {fileID: 481133954206584686}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.55, y: 9.3, z: 0}
+  m_LocalPosition: {x: -9.55, y: 2.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50025,6 +50028,7 @@ MonoBehaviour:
   Gems: {fileID: 7750051442246383618}
   Key: {fileID: 8628140032870701208}
   Score: {fileID: 1785261532388003267}
+  isKey: 1
 --- !u!224 &6384841787886927380
 RectTransform:
   m_ObjectHideFlags: 0

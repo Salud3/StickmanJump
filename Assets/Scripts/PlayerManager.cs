@@ -24,6 +24,8 @@ public class PlayerManager : MonoBehaviour
     }
     void Update()
     {
+        vidas = GameManager.Instance.Vidas;
+
         if (vidas > 3)
         {
             vidas = 3;
@@ -75,7 +77,7 @@ public class PlayerManager : MonoBehaviour
     }
     private IEnumerator GetDamage()
     {
-        vidas--;
+        GameManager.Instance.damage();
         Debug.Log("Daño recibido");
         yield return new WaitForSeconds(.60f);
         this.GetComponent<Animator>().SetBool("Dmg",false);
