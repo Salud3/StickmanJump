@@ -1,4 +1,5 @@
-**##Stickman Jump v1.0.0##**
+#*Stickman Jump v1.0.0*
+
 Juego Desarrollado para la GameJam interna de Artek Institute - Sae Institute (T4 - 2023)
 
 **Scripts:**
