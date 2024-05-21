@@ -1686,7 +1686,7 @@ GameObject:
   - component: {fileID: 90756438257368513}
   - component: {fileID: 4223399135540377616}
   m_Layer: 5
-  m_Name: Coleccionables
+  m_Name: Coleccionables - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
